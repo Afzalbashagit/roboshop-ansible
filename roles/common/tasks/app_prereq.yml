@@ -1,7 +1,7 @@
 
 - name: Add application user
   ansible.builtin.user:
-    name: {{app_user}}
+    name: "{{app_user}}"
 
 - name: Clean old content
   ansible.builtin.file:
