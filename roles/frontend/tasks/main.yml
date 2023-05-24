@@ -31,7 +31,10 @@
     name: nginx
     enabled: true
 
-
+- name: Run tasks/other.yaml instead of 'main'
+  ansible.builtin.import_role:
+    name: elk
+    tasks_from: filebeat
 
 
 
