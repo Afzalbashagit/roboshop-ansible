@@ -4,10 +4,16 @@
     name: nginx
     state: installed
 
-- name: Copy file with owner and permissions
+- name: Copy roboshop config
   ansible.builtin.template:
     src: frontend.confo
     dest: /etc/nginx/default.d/roboshop.conf
+
+
+- name: Copy nginx config
+  ansible.builtin.template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
 
 - name: Clean old app content
   ansible.builtin.file:
