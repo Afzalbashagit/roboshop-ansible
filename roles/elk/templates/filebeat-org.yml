@@ -20,5 +20,7 @@ output.logstash:
   # The Logstash hosts
   hosts: ["172.31.12.48:5044"]
 
-
+processors:
+  - drop_fields:
+      fields: ["agent.ephemeral_id", "agent.hostname", "agent.id", "agent.type", "agent.version", "ecs.version", "input.type", "log.offset", "version"]
 
