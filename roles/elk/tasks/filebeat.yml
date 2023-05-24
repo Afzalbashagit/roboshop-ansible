@@ -11,7 +11,7 @@
 - name: Copy filebeat
   ansible.builtin.template:
     src: filebeat-org.yml
-    dest: /etc/filebeat/filebeat-org.yml
+    dest: /etc/filebeat/filebeat.yml
 
 - name: start filebeat
   ansible.builtin.systemd:
