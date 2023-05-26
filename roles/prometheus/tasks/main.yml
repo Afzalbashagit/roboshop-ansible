@@ -7,3 +7,8 @@
   ansible.builtin.systemd:
     state: restarted
     name: prometheus
+
+- name: Import prometheus
+  ansible.builtin.import_role:
+    name: prometheus
+    tasks_from: node-exporter.yml
