@@ -22,6 +22,6 @@
         name: mysql
 
     - name: Load Schema
-      ansible.builtin.shell: mysql -h mysql-dev.afzalbasha.cloud  -uroot -pRoboshop@1 < /app/schema/{{component}}.sql
+      ansible.builtin.shell: mysql -h {{ lookup('aws_ssm', 'dev.{{component}}.db_host', region='us-east-1' ) }}  -u{{ lookup('aws_ssm', 'dev.{{component}}.db_user', region='us-east-1' ) }} -{{ lookup('aws_ssm', 'dev.{{component}}.db_pass', region='us-east-1' ) }} < /app/schema/{{component}}.sql
 
 
